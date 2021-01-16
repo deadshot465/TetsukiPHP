@@ -16,7 +16,7 @@ services:
         volumes:
             - '.:/var/www/html'
         networks:
-            - sail
+            - tetsuki-php
         # depends_on:
             # - mysql
             # - redis
@@ -65,10 +65,10 @@ services:
     #     networks:
     #         - sail
 networks:
-    sail:
+    tetsuki-php:
         driver: bridge
-volumes:
-    sailmysql:
-        driver: local
-    sailredis:
-        driver: local
+# volumes:
+#     sailmysql:
+#         driver: local
+#     sailredis:
+#         driver: local
