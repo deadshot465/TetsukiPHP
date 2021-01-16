@@ -31,7 +31,7 @@ RUN docker-php-ext-install pdo pdo_pgsql mbstring exif pcntl bcmath gd
 # Get latest composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-RUN setcap "cap_net_bind_service=+ep" /usr/bin/php8.0
+# RUN setcap "cap_net_bind_service=+ep" /usr/bin/php8.0
 
 # Create system user for running Composer and Artisan commands.
 RUN useradd -G www-data,root -u $uid -d /home/$user $user
