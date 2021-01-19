@@ -40,7 +40,11 @@ RUN mkdir -p /home/$user/.composer && \
 
 # EXPOSE 17899
 
+COPY . /var/www
+RUN mkdir -p /var/www/vendor
+RUN composer install
+RUN chown -R $user:$user /var/www
+
 # Set working directory
 WORKDIR /var/www
-
 USER $user
