@@ -33,7 +33,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # RUN setcap "cap_net_bind_service=+ep" /usr/bin/php8.0
 
 # Create system user for running Composer and Artisan commands.
-RUN useradd -G www-data,root -u $uid -d /home/$user $user && \
+RUN useradd -G www-data,root -u $UID -d /home/$user $USER && \
     mkdir -p /home/$user/.composer && \
     chown -R $user:$user /home/$user
 
