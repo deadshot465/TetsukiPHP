@@ -41,6 +41,7 @@ jobs:
     # needs: test
 
     runs-on: ubuntu-latest
+    environment: deployment
     if: github.event_name == 'push'
 
     steps:
