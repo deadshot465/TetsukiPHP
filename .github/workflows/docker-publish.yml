@@ -41,7 +41,9 @@ jobs:
     # needs: test
 
     runs-on: ubuntu-latest
-    environment: deployment
+    env:
+      UID: 1337
+      USER: deadshot465
     if: github.event_name == 'push'
 
     steps:
