@@ -1,8 +1,8 @@
 FROM php:8.0-fpm
 
 ARG WWWGROUP
-ARG USER
-ARG UID
+ARG USER=${USER}
+ARG UID=${UID}
 
 WORKDIR /var/www
 
