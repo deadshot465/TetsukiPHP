@@ -1,5 +1,7 @@
 <?php
+declare(strict_types=1);
 
+use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test/{param}', [PostsController::class, 'show_post']);
+Route::get('/credit/{index}', [PostsController::class, 'show_credits']);
