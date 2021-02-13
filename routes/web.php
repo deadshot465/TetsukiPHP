@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+use App\Http\Controllers\PlayersController;
 use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,4 @@ Route::get('/', function () {
 
 Route::get('/test/{param}', [PostsController::class, 'show_post']);
 Route::get('/credit/{index}', [PostsController::class, 'show_credits']);
+Route::get('/players', [PlayersController::class, 'get_all_players']);
